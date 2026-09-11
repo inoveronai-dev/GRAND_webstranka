@@ -37,15 +37,12 @@ export function ContactForm() {
   }
 
   const inputClass =
-    "w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-grand-gray-dark placeholder:text-grand-gray/60 focus:border-grand-orange focus:outline-none focus:ring-2 focus:ring-grand-orange/30";
+    "w-full border-0 border-b border-grand-gray/25 bg-transparent px-0 py-4 text-grand-gray-dark placeholder:text-grand-gray/50 focus:border-grand-orange focus:outline-none transition-colors duration-300";
 
   if (status === "success") {
     return (
-      <div
-        role="status"
-        className="rounded-sm border border-grand-gray/20 bg-white p-8"
-      >
-        <p className="text-lg font-light text-grand-gray-dark">
+      <div role="status" className="border-l border-grand-orange py-2 pl-6">
+        <p className="text-base leading-loose text-grand-gray-dark">
           Vaša správa bola odoslaná. Ozveme sa vám čo najskôr.
         </p>
       </div>
@@ -57,7 +54,7 @@ export function ContactForm() {
       onSubmit={handleSubmit}
       action={endpoint}
       method="POST"
-      className="space-y-6"
+      className="space-y-8"
       noValidate
     >
       <input type="hidden" name="access_key" value={accessKey} />
@@ -66,7 +63,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="name"
-          className="mb-1 block text-xs font-medium uppercase tracking-widest text-grand-gray"
+          className="mb-2 block text-[10px] font-medium uppercase tracking-[0.25em] text-grand-gray"
         >
           Meno *
         </label>
@@ -83,7 +80,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="email"
-          className="mb-1 block text-xs font-medium uppercase tracking-widest text-grand-gray"
+          className="mb-2 block text-[10px] font-medium uppercase tracking-[0.25em] text-grand-gray"
         >
           E-mail *
         </label>
@@ -100,7 +97,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="message"
-          className="mb-1 block text-xs font-medium uppercase tracking-widest text-grand-gray"
+          className="mb-2 block text-[10px] font-medium uppercase tracking-[0.25em] text-grand-gray"
         >
           Odkaz *
         </label>
@@ -108,7 +105,7 @@ export function ContactForm() {
           id="message"
           name="message"
           required
-          rows={5}
+          rows={4}
           className={cn(inputClass, "resize-none")}
         />
       </div>
@@ -116,13 +113,13 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="mt-4 w-full rounded-lg bg-grand-orange px-10 py-4 text-sm font-semibold uppercase tracking-widest text-white transition-all hover:bg-grand-orange-hover hover:shadow-lg disabled:opacity-60 sm:w-auto"
+        className="mt-6 border border-grand-gray-dark px-10 py-3.5 text-[10px] font-medium uppercase tracking-[0.3em] text-grand-gray-dark transition-all duration-300 hover:border-grand-orange hover:text-grand-orange disabled:opacity-50"
       >
         {status === "submitting" ? "Odosielam…" : "Odoslať"}
       </button>
 
       {status === "error" && (
-        <p role="alert" className="text-sm text-red-600">
+        <p role="alert" className="text-sm text-red-600/80">
           Odoslanie zlyhalo. Skúste to znova alebo nás kontaktujte telefonicky.
         </p>
       )}

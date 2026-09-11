@@ -6,6 +6,8 @@
   --color-grand-gray: #998d87;
   --color-grand-gray-light: #f5f3f2;
   --color-grand-gray-dark: #5c534e;
+  --color-grand-cream: #f9f9f6;
+  --color-grand-charcoal: #111111;
 
   --font-sans: var(--font-inter), system-ui, sans-serif;
 }
@@ -15,6 +17,8 @@
   --grand-gray: #998d87;
   --grand-gray-light: #f5f3f2;
   --grand-gray-dark: #5c534e;
+  --grand-cream: #f9f9f6;
+  --grand-charcoal: #111111;
 }
 
 html {
@@ -22,10 +26,18 @@ html {
 }
 
 body {
-  background-color: white;
+  background-color: var(--grand-cream);
   color: var(--grand-gray-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.text-shadow-hero {
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+}
+
+.text-shadow-subtle {
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
 }
 
 ::selection {
