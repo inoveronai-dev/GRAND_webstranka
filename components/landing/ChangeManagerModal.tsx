@@ -29,27 +29,27 @@ export function ChangeManagerModal() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="mt-10 inline-flex items-center rounded-lg bg-grand-orange px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-grand-orange-hover hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-grand-orange"
+        className="inline-flex items-center rounded-full border border-grand-orange px-8 py-3.5 text-xs font-medium uppercase tracking-[0.15em] text-grand-orange transition-all duration-300 hover:bg-grand-orange hover:text-white"
       >
         Ako zmeniť správcu? Pre presný postup kliknite sem.
       </button>
 
       {open && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
           role="dialog"
           aria-modal="true"
           aria-labelledby="change-manager-heading"
           onClick={close}
         >
           <div
-            className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl md:p-8"
+            className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto bg-grand-cream p-8 md:p-12"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               type="button"
               onClick={close}
-              className="absolute right-4 top-4 rounded-md p-2 text-grand-gray transition-colors hover:bg-grand-gray-light hover:text-grand-gray-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-grand-orange"
+              className="absolute right-6 top-6 p-1 text-grand-gray transition-colors hover:text-grand-gray-dark"
               aria-label="Zavrieť"
             >
               <X className="h-5 w-5" />
@@ -57,12 +57,12 @@ export function ChangeManagerModal() {
 
             <h3
               id="change-manager-heading"
-              className="mb-6 pr-10 text-2xl font-bold text-grand-gray-dark"
+              className="mb-8 pr-10 text-xs font-medium uppercase tracking-[0.25em] text-grand-orange"
             >
               Ako zmeniť správcu
             </h3>
 
-            <div className="space-y-4 text-base leading-relaxed text-grand-gray">
+            <div className="space-y-6 text-base leading-loose text-grand-gray">
               <p>
                 V prípade, že sa rozhodnete zmeniť správcu, rozhodne Vám odporúčame,
                 aby ste nás kontaktovali. Pri mnohých formálnych náležitostiach zmeny

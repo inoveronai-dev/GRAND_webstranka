@@ -14,6 +14,8 @@ const config: Config = {
           gray: "#998d87",
           "gray-light": "#f5f3f2",
           "gray-dark": "#5c534e",
+          cream: "#f9f9f6",
+          charcoal: "#111111",
         },
       },
       fontFamily: {

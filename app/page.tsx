@@ -18,27 +18,27 @@ export default function HomePage() {
       {/* O nás */}
       <section
         id="o-nas"
-        className="scroll-mt-28 bg-white py-24 md:py-32"
+        className="scroll-mt-28 bg-grand-cream py-32"
         aria-labelledby="o-nas-heading"
       >
-        <div className="mx-auto max-w-4xl px-6">
+        <div className="mx-auto max-w-3xl px-6">
           <h2
             id="o-nas-heading"
-            className="mb-12 text-3xl font-light tracking-tight text-grand-gray-dark md:text-4xl"
+            className="mb-16 text-center text-xs font-medium uppercase tracking-[0.3em] text-grand-orange md:text-left"
           >
             O nás
           </h2>
 
-          <div className="mx-auto max-w-4xl space-y-8 text-base leading-relaxed text-grand-gray md:text-lg md:leading-loose">
+          <div className="mx-auto max-w-3xl space-y-10 text-base leading-loose text-grand-gray md:text-lg">
             <p>{aboutContent.intro}</p>
 
             <div>
-              <p className="mb-4">{aboutContent.pillarsIntro}</p>
-              <ul className="space-y-4 pl-0">
+              <p className="mb-6">{aboutContent.pillarsIntro}</p>
+              <ul className="space-y-5 pl-0">
                 {aboutContent.pillars.map((pillar) => (
-                  <li key={pillar} className="flex items-start">
+                  <li key={pillar} className="flex items-start gap-4">
                     <span
-                      className="mr-3 mt-1.5 h-2 w-2 shrink-0 rounded-full bg-grand-orange"
+                      className="mt-3 h-px w-6 shrink-0 bg-grand-orange/60"
                       aria-hidden
                     />
                     <span className="flex-1">{pillar}</span>
@@ -49,7 +49,9 @@ export default function HomePage() {
 
             <p>{aboutContent.closing}</p>
 
-            <ChangeManagerModal />
+            <div className="flex justify-center pt-4 md:justify-start">
+              <ChangeManagerModal />
+            </div>
           </div>
         </div>
       </section>
@@ -57,31 +59,31 @@ export default function HomePage() {
       {/* V čom sme lepší */}
       <section
         id="vyhody"
-        className="scroll-mt-28 bg-grand-gray-light py-24 md:py-32"
+        className="scroll-mt-28 bg-[#111111] py-32"
         aria-labelledby="vyhody-heading"
       >
         <div className="mx-auto max-w-3xl px-6">
           <h2
             id="vyhody-heading"
-            className="mb-12 text-3xl font-light tracking-tight text-grand-gray-dark md:text-4xl"
+            className="mb-16 text-center text-xs font-medium uppercase tracking-[0.3em] text-grand-orange md:text-left"
           >
             V čom sme lepší
           </h2>
 
-          <p className="mb-10 text-base leading-relaxed text-grand-gray md:text-lg md:leading-loose">
+          <p className="mb-14 text-base leading-loose text-[#f9f9f6]/75 md:text-lg">
             {advantagesContent.intro}
           </p>
 
-          <ul className="space-y-6">
+          <ul className="divide-y divide-white/10">
             {advantagesContent.items.map((item, index) => (
               <li
                 key={item}
-                className="flex gap-5 border-l-2 border-grand-orange/30 pl-6"
+                className="grid grid-cols-[3rem_1fr] gap-6 py-8 first:pt-0 last:pb-0 md:grid-cols-[4rem_1fr] md:gap-10"
               >
-                <span className="text-sm font-medium tabular-nums text-grand-orange">
+                <span className="font-light tabular-nums text-grand-orange/80 text-lg md:text-xl">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <p className="text-base leading-relaxed text-grand-gray-dark md:text-lg md:leading-loose">
+                <p className="text-base leading-loose text-[#f9f9f6]/90 md:text-lg">
                   {item}
                 </p>
               </li>
@@ -93,46 +95,50 @@ export default function HomePage() {
       {/* Kontakt */}
       <section
         id="kontakt"
-        className="scroll-mt-28 bg-white py-24 md:py-32"
+        className="scroll-mt-28 bg-grand-cream py-32"
         aria-labelledby="kontakt-heading"
       >
         <div className="mx-auto max-w-6xl px-6">
           <h2
             id="kontakt-heading"
-            className="mb-16 text-3xl font-light tracking-tight text-grand-gray-dark md:text-4xl"
+            className="mb-20 text-center text-xs font-medium uppercase tracking-[0.3em] text-grand-orange md:text-left"
           >
             Kontakt
           </h2>
 
-          <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
+          <div className="grid gap-20 lg:grid-cols-2 lg:gap-32">
             <div>
               <ContactForm />
             </div>
 
-            <div className="space-y-8 text-base leading-relaxed text-grand-gray">
+            <div className="space-y-10 text-sm leading-loose tracking-wide text-grand-gray lg:pt-2">
               <div>
-                <p className="text-lg font-medium text-grand-gray-dark">
+                <p className="text-base font-medium uppercase tracking-[0.15em] text-grand-gray-dark">
                   {contactContent.company}
                 </p>
-                <p className="mt-2">{contactContent.registry}</p>
+                <p className="mt-4">{contactContent.registry}</p>
                 <p className="mt-1">IČO: {contactContent.ico}</p>
               </div>
 
               <div>
-                <p className="font-medium text-grand-gray-dark">
+                <p className="text-xs font-medium uppercase tracking-[0.2em] text-grand-orange">
                   {contactContent.headquarters.label}
                 </p>
-                <p>{contactContent.headquarters.address}</p>
+                <p className="mt-2 text-grand-gray-dark">
+                  {contactContent.headquarters.address}
+                </p>
               </div>
 
               <div>
-                <p className="font-medium text-grand-gray-dark">
+                <p className="text-xs font-medium uppercase tracking-[0.2em] text-grand-orange">
                   {contactContent.branch.label}
                 </p>
-                <p>{contactContent.branch.address}</p>
+                <p className="mt-2 text-grand-gray-dark">
+                  {contactContent.branch.address}
+                </p>
               </div>
 
-              <div className="space-y-2 border-t border-grand-gray/20 pt-8">
+              <div className="space-y-3 border-t border-grand-gray/15 pt-10">
                 <p>
                   Telefón:{" "}
                   <PhoneLink
@@ -145,7 +151,7 @@ export default function HomePage() {
                   E-mail:{" "}
                   <a
                     href={`mailto:${contactContent.email}`}
-                    className="font-semibold text-grand-orange hover:text-grand-orange-hover"
+                    className="text-grand-orange transition-colors hover:text-grand-orange-hover"
                   >
                     {contactContent.email}
                   </a>
@@ -154,7 +160,7 @@ export default function HomePage() {
                   Web:{" "}
                   <a
                     href={`https://${contactContent.web}`}
-                    className="font-semibold text-grand-orange hover:text-grand-orange-hover"
+                    className="text-grand-orange transition-colors hover:text-grand-orange-hover"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -170,16 +176,16 @@ export default function HomePage() {
       {/* Mapa */}
       <section
         aria-labelledby="map-heading"
-        className="bg-gray-50 py-16"
+        className="bg-grand-cream py-24"
       >
         <div className="mx-auto max-w-5xl px-6">
           <h2
             id="map-heading"
-            className="mb-8 text-center text-3xl font-bold text-grand-gray-dark"
+            className="mb-12 text-center text-xs font-medium uppercase tracking-[0.3em] text-grand-gray-dark"
           >
             Kde nás nájdete
           </h2>
-          <div className="mx-auto h-[450px] w-full max-w-5xl overflow-hidden rounded-2xl border border-gray-200 shadow-xl">
+          <div className="mx-auto h-[450px] w-full max-w-5xl overflow-hidden rounded-sm border border-grand-gray/15">
             <iframe
               src="https://maps.google.sk/maps/ms?msid=204739905539668704522.0004e5902dc9d9de28ed2&msa=0&ie=UTF8&t=m&ll=48.334343,18.215332&spn=1.113752,3.78479&z=8&output=embed"
               title="Mapa — kde nás nájdete"

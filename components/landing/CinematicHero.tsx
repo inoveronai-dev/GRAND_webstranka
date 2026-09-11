@@ -22,17 +22,17 @@ export function CinematicHero() {
         aria-hidden
       />
 
-      <div className="relative z-10 mx-auto max-w-4xl px-6 py-32 text-center">
-        <h1 className="text-5xl font-extrabold leading-tight tracking-tight text-white drop-shadow-lg md:text-7xl">
+      <div className="relative z-10 mx-auto max-w-5xl px-6 pb-24 pt-40 text-center">
+        <h1 className="text-shadow-hero text-4xl font-light uppercase leading-tight tracking-[0.2em] text-white sm:text-5xl md:text-6xl lg:text-7xl">
           {heroContent.headline}
         </h1>
-        <p className="mx-auto mt-8 max-w-2xl text-lg font-light leading-relaxed text-white/90 drop-shadow-md sm:text-xl md:text-2xl">
+        <p className="text-shadow-subtle mx-auto mt-10 max-w-2xl text-base font-light leading-relaxed tracking-wide text-white/85 sm:text-lg md:text-xl">
           {heroContent.subtitle}
         </p>
 
         <a
           href="#o-nas"
-          className="mt-20 inline-block text-xs font-medium uppercase tracking-[0.3em] text-white/50 transition-colors hover:text-grand-orange"
+          className="mt-24 inline-block text-[10px] font-medium uppercase tracking-[0.4em] text-white/40 transition-colors duration-300 hover:text-grand-orange"
           aria-label="Posunúť sa nižšie"
         >
           ↓

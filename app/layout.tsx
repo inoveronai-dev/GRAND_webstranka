@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { EmergencyBanner } from "@/components/layout/EmergencyBanner";
-import { GlobalHeader } from "@/components/layout/GlobalHeader";
+import { HeroNav } from "@/components/layout/HeroNav";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import "./globals.css";
 
@@ -23,11 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sk" className={`${inter.variable} scroll-smooth`}>
-      <body className="flex min-h-screen flex-col font-sans">
-        <div className="sticky top-0 z-50">
-          <EmergencyBanner />
-          <GlobalHeader />
-        </div>
+      <body className="flex min-h-screen flex-col bg-grand-cream font-sans">
+        <HeroNav />
         <main className="flex-1">{children}</main>
         <SiteFooter />
       </body>
