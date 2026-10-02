@@ -59,8 +59,8 @@ export function GlobalHeader({ overHero = false }: GlobalHeaderProps) {
       "text-xs font-medium uppercase tracking-[0.12em] transition-colors duration-300",
       overHero
         ? active
-          ? "text-grand-orange"
-          : "text-white/80 hover:text-white"
+          ? "text-shadow-nav text-grand-orange"
+          : "text-shadow-nav text-white/90 hover:text-white"
         : active
           ? "text-grand-orange"
           : "text-grand-gray-dark hover:text-grand-orange"
@@ -69,28 +69,28 @@ export function GlobalHeader({ overHero = false }: GlobalHeaderProps) {
 
   return (
     <header className="bg-transparent">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 pb-5 pt-2 md:pb-6 md:pt-3">
         <a
           href="#domov"
-          className="flex shrink-0 items-center"
+          className="flex shrink-0 items-center py-1"
           onClick={() => handleNavClick("#domov")}
         >
           <Image
             src="/logo.png"
             alt={companyName}
-            width={160}
-            height={44}
+            width={200}
+            height={56}
             priority
             className={cn(
-              "h-auto w-auto max-h-11 transition-opacity duration-300",
-              overHero && "brightness-110"
+              "h-auto w-auto max-h-[3.25rem] transition-opacity duration-300 md:max-h-14",
+              overHero && "brightness-110 drop-shadow-[0_1px_10px_rgba(0,0,0,0.4)]"
             )}
           />
         </a>
 
         <nav
           aria-label="Hlavná navigácia"
-          className="hidden items-center gap-10 lg:flex"
+          className="hidden items-center gap-11 lg:flex"
         >
           {mainNavLinks.map(({ href, label }) => (
             <a
@@ -119,7 +119,7 @@ export function GlobalHeader({ overHero = false }: GlobalHeaderProps) {
             className={cn(
               "inline-flex items-center justify-center p-2 transition-colors lg:hidden",
               overHero
-                ? "text-white/80 hover:text-white"
+                ? "text-shadow-nav text-white hover:text-white"
                 : "text-grand-gray-dark hover:text-grand-orange"
             )}
             aria-expanded={mobileOpen}

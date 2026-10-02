@@ -37,7 +37,10 @@ export function ContactForm() {
   }
 
   const inputClass =
-    "w-full border-0 border-b border-grand-gray/25 bg-transparent px-0 py-4 text-grand-gray-dark placeholder:text-grand-gray/50 focus:border-grand-orange focus:outline-none transition-colors duration-300";
+    "w-full border-0 border-b border-grand-gray/25 bg-transparent px-0 py-4 text-grand-gray-dark placeholder:text-grand-gray/50 focus:border-grand-orange focus:outline-none transition-[border-color] duration-300";
+
+  const labelClass =
+    "mb-2 block text-[10px] font-medium uppercase tracking-[0.25em] text-grand-gray transition-colors duration-300 group-focus-within:text-grand-orange";
 
   if (status === "success") {
     return (
@@ -60,11 +63,8 @@ export function ContactForm() {
       <input type="hidden" name="access_key" value={accessKey} />
       <input type="hidden" name="subject" value={subject} />
 
-      <div>
-        <label
-          htmlFor="name"
-          className="mb-2 block text-[10px] font-medium uppercase tracking-[0.25em] text-grand-gray"
-        >
+      <div className="group">
+        <label htmlFor="name" className={labelClass}>
           Meno *
         </label>
         <input
@@ -72,16 +72,13 @@ export function ContactForm() {
           name="name"
           type="text"
           required
-          className={inputClass}
+          className={cn(inputClass)}
           autoComplete="name"
         />
       </div>
 
-      <div>
-        <label
-          htmlFor="email"
-          className="mb-2 block text-[10px] font-medium uppercase tracking-[0.25em] text-grand-gray"
-        >
+      <div className="group">
+        <label htmlFor="email" className={labelClass}>
           E-mail *
         </label>
         <input
@@ -89,16 +86,13 @@ export function ContactForm() {
           name="email"
           type="email"
           required
-          className={inputClass}
+          className={cn(inputClass)}
           autoComplete="email"
         />
       </div>
 
-      <div>
-        <label
-          htmlFor="message"
-          className="mb-2 block text-[10px] font-medium uppercase tracking-[0.25em] text-grand-gray"
-        >
+      <div className="group">
+        <label htmlFor="message" className={labelClass}>
           Odkaz *
         </label>
         <textarea
@@ -113,7 +107,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="mt-6 border border-grand-gray-dark px-10 py-3.5 text-[10px] font-medium uppercase tracking-[0.3em] text-grand-gray-dark transition-all duration-300 hover:border-grand-orange hover:text-grand-orange disabled:opacity-50"
+        className="mt-6 border border-grand-gray-dark px-10 py-3.5 text-[10px] font-medium uppercase tracking-[0.3em] text-grand-gray-dark transition-all duration-300 hover:border-grand-orange hover:bg-grand-orange hover:text-white disabled:opacity-50"
       >
         {status === "submitting" ? "Odosielam…" : "Odoslať"}
       </button>

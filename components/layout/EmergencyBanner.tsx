@@ -16,11 +16,13 @@ export function EmergencyBanner({ overHero = false }: EmergencyBannerProps) {
       aria-label="Havarijná linka"
       className={cn(
         "transition-colors duration-500",
-        overHero ? "bg-transparent text-white/90" : "bg-transparent text-grand-gray-dark"
+        overHero
+          ? "bg-transparent text-shadow-nav text-white"
+          : "bg-transparent text-grand-gray-dark"
       )}
     >
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-4 gap-y-1 px-6 py-2.5 text-xs uppercase tracking-[0.15em] sm:text-sm">
-        <span className="inline-flex items-center gap-2 font-medium">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-5 gap-y-1 px-6 pb-1 pt-3.5 text-[11px] uppercase tracking-[0.14em] sm:text-xs md:pt-4">
+        <span className="inline-flex items-center gap-2.5 font-medium">
           <AlertCircle className="h-3.5 w-3.5 text-grand-orange" aria-hidden />
           {label}
         </span>
@@ -28,7 +30,7 @@ export function EmergencyBanner({ overHero = false }: EmergencyBannerProps) {
           phone={phone}
           display={phoneDisplay}
           className={cn(
-            "text-xs tracking-wide sm:text-sm",
+            "text-[11px] tracking-wide sm:text-xs",
             overHero ? "text-grand-orange hover:text-white" : ""
           )}
         />
