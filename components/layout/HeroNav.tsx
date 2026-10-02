@@ -18,10 +18,10 @@ export function HeroNav() {
   return (
     <div
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
+        "hero-nav-enter fixed inset-x-0 top-0 z-50 transition-all duration-500",
         scrolled
           ? "border-b border-grand-gray/10 bg-grand-cream/95 backdrop-blur-md"
-          : "bg-transparent"
+          : "bg-gradient-to-b from-black/30 via-black/[0.1] to-transparent pb-2"
       )}
     >
       <EmergencyBanner overHero={!scrolled} />

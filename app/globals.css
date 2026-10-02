@@ -7,6 +7,8 @@
   --color-grand-gray-light: #f5f3f2;
   --color-grand-gray-dark: #5c534e;
   --color-grand-cream: #f9f9f6;
+  --color-grand-sand: #f3eee6;
+  --color-grand-sand-deep: #ebe4d8;
   --color-grand-charcoal: #111111;
 
   --font-sans: var(--font-inter), system-ui, sans-serif;
@@ -18,6 +20,8 @@
   --grand-gray-light: #f5f3f2;
   --grand-gray-dark: #5c534e;
   --grand-cream: #f9f9f6;
+  --grand-sand: #f3eee6;
+  --grand-sand-deep: #ebe4d8;
   --grand-charcoal: #111111;
 }
 
@@ -33,13 +37,169 @@ body {
 }
 
 .text-shadow-hero {
-  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.35),
+    0 8px 36px rgba(0, 0, 0, 0.25);
 }
 
 .text-shadow-subtle {
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.28);
+}
+
+.text-shadow-nav {
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
 }
 
 ::selection {
   background-color: color-mix(in srgb, var(--grand-orange) 25%, transparent);
+}
+
+/* Motion system */
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--reveal-y, 20px));
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal.reveal-scale {
+  transform: translateY(var(--reveal-y, 16px)) scale(0.985);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.hero-ken-burns {
+  animation: heroKenBurns 16s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform: scale(1);
+  transform-origin: center center;
+}
+
+@keyframes heroKenBurns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.025);
+  }
+}
+
+.hero-enter {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: heroEnter 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-enter-sub {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: heroEnter 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.14s forwards;
+}
+
+.hero-enter-cue {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: heroEnter 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.32s forwards;
+}
+
+.hero-nav-enter {
+  animation: heroNavFade 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes heroNavFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes heroEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.accent-rule-animate {
+  transform: scaleX(0);
+  animation: accentRuleIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+}
+
+@keyframes accentRuleIn {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.placeholder-arch {
+  background:
+    linear-gradient(135deg, #2a2624 0%, #5c534e 45%, #998d87 100%);
+}
+
+/* Residential break — fixed architectural reveal (desktop) */
+.architectural-break__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/grand-residential-wide.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+}
+
+/* Desktop + fine pointer: fixed, slightly oversized photograph */
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+  .architectural-break__bg {
+    background-attachment: fixed;
+    background-size: 110% auto;
+  }
+
+  /* Tall / narrow viewports: guarantee full cover while staying slightly zoomed */
+  @media (max-aspect-ratio: 4/5) {
+    .architectural-break__bg {
+      background-size: cover;
+      transform: scale(1.06);
+      transform-origin: center center;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero-ken-burns {
+    animation: none;
+    transform: none;
+  }
+
+  .hero-enter,
+  .hero-enter-sub,
+  .hero-enter-cue,
+  .hero-nav-enter,
+  .accent-rule-animate {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .architectural-break__bg {
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    transform: none !important;
+  }
 }
