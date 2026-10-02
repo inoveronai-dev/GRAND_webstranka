@@ -34,10 +34,10 @@ export function AdvantagesSection() {
   return (
     <section
       id="vyhody"
-      className="relative scroll-mt-28 overflow-hidden bg-grand-charcoal py-24 md:py-32"
+      className="relative scroll-mt-28 bg-grand-charcoal py-24 md:py-32"
       aria-labelledby="vyhody-heading"
     >
-      {/* Imperceptible warm depth */}
+      {/* Imperceptible warm depth — no overflow:hidden so sticky works */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
@@ -47,23 +47,30 @@ export function AdvantagesSection() {
         }}
       />
 
-      <div className="relative mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-[0.85fr_1.65fr] lg:gap-20">
-        <div className="lg:sticky lg:top-32 lg:self-start">
+      <div className="relative mx-auto grid max-w-6xl items-start gap-14 px-6 lg:grid-cols-[0.9fr_1.6fr] lg:gap-20">
+        {/* Sticky left — same pattern as O nás */}
+        <div className="lg:sticky lg:top-28 lg:self-start">
           <Reveal>
             <AccentRule animated className="bg-grand-orange" />
+
             <h2
               id="vyhody-heading"
-              className="mb-8 max-w-[11ch] text-[clamp(1.85rem,4vw,2.85rem)] font-light uppercase leading-[1.1] tracking-[0.1em] text-[#f9f9f6] md:mb-10"
+              className="mb-8 max-w-[10ch] text-[clamp(1.9rem,4.2vw,3rem)] font-light uppercase leading-[1.05] tracking-[0.1em] md:mb-10"
             >
-              V čom sme lepší
+              <span className="block text-[#f9f9f6]">V čom sme</span>
+              <span className="mt-5 block text-grand-orange md:mt-7">
+                Lepší
+              </span>
             </h2>
-            <p className="mb-14 max-w-sm text-base leading-loose text-[#f9f9f6]/70 md:text-lg">
+
+            <p className="mb-12 max-w-sm text-base leading-loose text-[#f9f9f6]/70 md:mb-14 md:text-lg">
               {advantagesContent.intro}
             </p>
-            <div>
+
+            <div className="border-t border-white/10 pt-8 md:pt-10">
               <p
                 className="font-light tabular-nums leading-none tracking-tight text-grand-orange"
-                style={{ fontSize: "clamp(5.5rem, 14vw, 10.5rem)" }}
+                style={{ fontSize: "clamp(5.5rem, 14vw, 10rem)" }}
               >
                 {String(count).padStart(2, "0")}
               </p>
@@ -74,6 +81,7 @@ export function AdvantagesSection() {
           </Reveal>
         </div>
 
+        {/* Scrolling right column */}
         <ul className="divide-y divide-white/[0.08]">
           {advantagesContent.items.map((item, index) => {
             const active = activeIndex === index;
@@ -89,7 +97,8 @@ export function AdvantagesSection() {
                     className={cn(
                       "group relative grid gap-4 py-8 transition-all duration-300 ease-out md:grid-cols-[3.5rem_1fr] md:gap-8 md:px-4",
                       "hover:translate-x-1.5 md:hover:translate-x-2",
-                      active && "translate-x-1 bg-grand-orange/[0.055] md:translate-x-1.5"
+                      active &&
+                        "translate-x-1 bg-grand-orange/[0.055] md:translate-x-1.5"
                     )}
                   >
                     <span
