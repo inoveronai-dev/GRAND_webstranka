@@ -2,36 +2,35 @@ import { contactTransition } from "@/data/content";
 import { Reveal } from "@/components/motion/Reveal";
 
 export function ContactTransition() {
-  const headline = contactTransition.headline;
-  // Intentional editorial break after the question mark clause
-  const [line1, line2] = splitCtaHeadline(headline);
+  const [line1, line2] = splitCtaHeadline(contactTransition.headline);
+  const ctaLabel = contactTransition.support.replace(/\.$/, "");
 
   return (
     <section
       aria-labelledby="contact-transition-heading"
-      className="bg-grand-orange py-24 md:py-32 lg:py-36"
+      className="bg-grand-orange py-28 md:py-36 lg:py-40"
     >
-      <div className="mx-auto max-w-4xl px-6 text-center md:text-left">
-        <Reveal y={18}>
+      <div className="mx-auto flex max-w-3xl flex-col items-center px-6 text-center">
+        <Reveal y={18} className="flex w-full flex-col items-center">
           <span
             aria-hidden
-            className="mb-8 block h-px w-12 bg-grand-charcoal/35 md:mb-10"
+            className="mb-10 block h-px w-14 bg-grand-charcoal/40"
           />
           <h2
             id="contact-transition-heading"
-            className="text-[clamp(1.85rem,4.5vw,3.35rem)] font-light leading-[1.15] tracking-tight text-grand-charcoal"
+            className="text-[clamp(1.9rem,4.8vw,3.4rem)] font-light leading-[1.15] tracking-tight text-grand-charcoal"
           >
             <span className="block">{line1}</span>
             {line2 ? <span className="block">{line2}</span> : null}
           </h2>
           <a
             href="#kontakt"
-            className="group mt-10 inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.28em] text-grand-charcoal transition-colors duration-300 hover:text-grand-charcoal/80 md:mt-12"
+            className="group mt-12 inline-flex items-center gap-4 border-b border-grand-charcoal/40 pb-2 text-[clamp(0.95rem,2vw,1.25rem)] font-medium uppercase tracking-[0.22em] text-grand-charcoal transition-colors duration-300 hover:border-grand-charcoal md:mt-14"
           >
-            <span>{contactTransition.support.replace(/\.$/, "")}</span>
+            <span>{ctaLabel}</span>
             <span
               aria-hidden
-              className="inline-block transition-transform duration-300 ease-out group-hover:translate-x-1.5"
+              className="inline-block text-[1.15em] transition-transform duration-300 ease-out group-hover:translate-x-1.5"
             >
               →
             </span>
@@ -43,7 +42,6 @@ export function ContactTransition() {
 }
 
 function splitCtaHeadline(headline: string): [string, string] {
-  // Prefer break before “vášho domu?” for editorial line rhythm
   const match = headline.match(/^(.+?\bspáve)\s+(.+)$/i);
   if (match) return [match[1], match[2]];
   return [headline, ""];
