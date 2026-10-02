@@ -30,16 +30,16 @@ export function ContactSection() {
           </Reveal>
 
           <Reveal delayMs={100} y={14}>
-            <div className="relative border-t border-grand-orange/50 pt-10 lg:border-l lg:border-t-0 lg:bg-grand-sand/50 lg:py-10 lg:pl-12 lg:pr-8 lg:pt-10">
+            <div className="relative overflow-hidden border-t border-grand-orange/50 pt-10 lg:border-l lg:border-t-0 lg:bg-grand-sand/50 lg:py-10 lg:pl-12 lg:pr-8 lg:pt-10">
               <span
                 aria-hidden
-                className="pointer-events-none absolute -right-4 bottom-0 select-none font-light leading-none text-grand-gray-dark/[0.055]"
-                style={{ fontSize: "clamp(9rem, 20vw, 14rem)" }}
+                className="pointer-events-none absolute bottom-[-0.15em] left-1/2 z-0 w-[140%] -translate-x-1/2 select-none text-center font-light uppercase leading-none tracking-[0.14em] text-grand-gray/[0.14]"
+                style={{ fontSize: "clamp(4.5rem, 14vw, 8.5rem)" }}
               >
-                G
+                GRAND
               </span>
 
-              <div className="relative space-y-0">
+              <div className="relative z-10 space-y-0">
                 <div className="pb-8">
                   <p className="text-sm font-medium uppercase tracking-[0.14em] text-grand-gray-dark md:text-base">
                     {contactContent.company}
