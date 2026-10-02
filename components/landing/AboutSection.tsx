@@ -30,7 +30,7 @@ export function AboutSection() {
             <AccentRule animated />
             <h2
               id="o-nas-heading"
-              className="mb-10 text-xs font-medium uppercase tracking-[0.3em] text-grand-orange"
+              className="mb-10 text-[clamp(2.25rem,5vw,3.5rem)] font-light uppercase leading-[1.05] tracking-[0.12em] text-grand-gray-dark md:mb-12"
             >
               O nás
             </h2>
@@ -38,7 +38,7 @@ export function AboutSection() {
 
           <Reveal delayMs={80} y={16}>
             <blockquote className="relative mb-12 border-l-2 border-grand-orange py-1 pl-6 md:mb-14 md:pl-8">
-              <p className="text-2xl font-light leading-snug tracking-tight text-grand-gray-dark md:text-3xl md:leading-[1.25]">
+              <p className="text-xl font-light leading-snug tracking-tight text-grand-gray-dark md:text-2xl md:leading-[1.3]">
                 {aboutContent.pullQuote}
               </p>
             </blockquote>

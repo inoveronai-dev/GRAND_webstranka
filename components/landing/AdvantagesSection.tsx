@@ -53,7 +53,7 @@ export function AdvantagesSection() {
             <AccentRule animated className="bg-grand-orange" />
             <h2
               id="vyhody-heading"
-              className="mb-6 text-xs font-medium uppercase tracking-[0.3em] text-grand-orange"
+              className="mb-8 max-w-[11ch] text-[clamp(1.85rem,4vw,2.85rem)] font-light uppercase leading-[1.1] tracking-[0.1em] text-[#f9f9f6] md:mb-10"
             >
               V čom sme lepší
             </h2>

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { contactContent } from "@/data/content";
 import { ContactForm } from "@/components/landing/ContactForm";
 import { PhoneLink } from "@/components/ui/PhoneLink";
@@ -14,103 +13,105 @@ export function ContactSection() {
     >
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <AccentRule animated />
-          <h2
-            id="kontakt-heading"
-            className="mb-16 text-xs font-medium uppercase tracking-[0.3em] text-grand-orange md:mb-20"
-          >
-            Kontakt
-          </h2>
+          <div className="mb-14 md:mb-16">
+            <AccentRule animated />
+            <h2
+              id="kontakt-heading"
+              className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-light uppercase leading-[1.1] tracking-[0.12em] text-grand-gray-dark"
+            >
+              Kontakt
+            </h2>
+          </div>
         </Reveal>
 
-        <div className="grid items-start gap-14 lg:grid-cols-12 lg:gap-0">
-          <Reveal y={14} className="lg:col-span-5 lg:pr-12">
+        <div className="grid items-start gap-16 lg:grid-cols-2 lg:gap-20 xl:gap-24">
+          <Reveal y={14}>
             <ContactForm />
           </Reveal>
 
-          <div className="relative lg:col-span-7 lg:border-l lg:border-grand-orange/40 lg:bg-grand-sand/60 lg:pl-12 lg:pr-2 lg:py-2">
-            <span
-              aria-hidden
-              className="pointer-events-none absolute -right-6 bottom-0 select-none font-light leading-none text-grand-gray-dark/[0.06] md:-right-10 md:text-[clamp(12rem,28vw,20rem)]"
-              style={{ fontSize: "clamp(11rem, 26vw, 18rem)" }}
-            >
-              G
-            </span>
+          <Reveal delayMs={100} y={14}>
+            <div className="relative border-t border-grand-orange/50 pt-10 lg:border-l lg:border-t-0 lg:bg-grand-sand/50 lg:py-10 lg:pl-12 lg:pr-8 lg:pt-10">
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -right-4 bottom-0 select-none font-light leading-none text-grand-gray-dark/[0.055]"
+                style={{ fontSize: "clamp(9rem, 20vw, 14rem)" }}
+              >
+                G
+              </span>
 
-            <Reveal delayMs={80} y={16} className="relative mb-10 lg:mb-12">
-              <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden sm:max-w-lg lg:ml-auto lg:max-w-none lg:w-[90%]">
-                <Image
-                  src="/images/grand-architecture-detail.jpg"
-                  alt="Vstup do bytového domu"
-                  fill
-                  sizes="(max-width: 1024px) 90vw, 40vw"
-                  quality={90}
-                  className="object-cover object-center"
-                />
-              </div>
-            </Reveal>
-
-            <Reveal delayMs={120} y={14}>
-              <div className="relative max-w-md space-y-10 text-sm leading-loose tracking-wide text-grand-gray lg:pl-1">
-                <div>
-                  <p className="text-base font-medium uppercase tracking-[0.15em] text-grand-gray-dark">
+              <div className="relative space-y-0">
+                <div className="pb-8">
+                  <p className="text-sm font-medium uppercase tracking-[0.14em] text-grand-gray-dark md:text-base">
                     {contactContent.company}
                   </p>
-                  <p className="mt-4">{contactContent.registry}</p>
-                  <p className="mt-1">IČO: {contactContent.ico}</p>
-                </div>
-
-                <div>
-                  <p className="text-xs font-medium uppercase tracking-[0.2em] text-grand-orange">
-                    {contactContent.headquarters.label}
+                  <p className="mt-3 text-sm leading-relaxed text-grand-gray">
+                    {contactContent.registry}
                   </p>
-                  <p className="mt-2 text-grand-gray-dark">
-                    {contactContent.headquarters.address}
+                  <p className="mt-1 text-sm text-grand-gray">
+                    IČO: {contactContent.ico}
                   </p>
                 </div>
 
-                <div>
-                  <p className="text-xs font-medium uppercase tracking-[0.2em] text-grand-orange">
-                    {contactContent.branch.label}
-                  </p>
-                  <p className="mt-2 text-grand-gray-dark">
-                    {contactContent.branch.address}
-                  </p>
-                </div>
-
-                <div className="space-y-3 border-t border-grand-gray/20 pt-10">
-                  <p>
-                    Telefón:{" "}
+                <div className="divide-y divide-grand-gray/20 border-t border-grand-gray/20">
+                  <div className="py-6">
+                    <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.22em] text-grand-orange">
+                      Telefón
+                    </p>
                     <PhoneLink
                       phone={contactContent.phone}
                       display={contactContent.phone}
                       showIcon={false}
+                      className="text-base text-grand-gray-dark md:text-lg"
                     />
-                  </p>
-                  <p>
-                    E-mail:{" "}
+                  </div>
+
+                  <div className="py-6">
+                    <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.22em] text-grand-orange">
+                      E-mail
+                    </p>
                     <a
                       href={`mailto:${contactContent.email}`}
-                      className="text-grand-orange transition-colors hover:text-grand-orange-hover"
+                      className="text-base text-grand-gray-dark transition-colors hover:text-grand-orange md:text-lg"
                     >
                       {contactContent.email}
                     </a>
-                  </p>
-                  <p>
-                    Web:{" "}
+                  </div>
+
+                  <div className="py-6">
+                    <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.22em] text-grand-orange">
+                      {contactContent.headquarters.label}
+                    </p>
+                    <p className="text-base leading-relaxed text-grand-gray-dark">
+                      {contactContent.headquarters.address}
+                    </p>
+                  </div>
+
+                  <div className="py-6">
+                    <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.22em] text-grand-orange">
+                      {contactContent.branch.label}
+                    </p>
+                    <p className="text-base leading-relaxed text-grand-gray-dark">
+                      {contactContent.branch.address}
+                    </p>
+                  </div>
+
+                  <div className="py-6">
+                    <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.22em] text-grand-orange">
+                      Web
+                    </p>
                     <a
                       href={`https://${contactContent.web}`}
-                      className="text-grand-orange transition-colors hover:text-grand-orange-hover"
+                      className="text-base text-grand-gray-dark transition-colors hover:text-grand-orange md:text-lg"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       {contactContent.web}
                     </a>
-                  </p>
+                  </div>
                 </div>
               </div>
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

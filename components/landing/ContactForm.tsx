@@ -37,14 +37,14 @@ export function ContactForm() {
   }
 
   const inputClass =
-    "w-full border-0 border-b border-grand-gray/25 bg-transparent px-0 py-4 text-grand-gray-dark placeholder:text-grand-gray/50 focus:border-grand-orange focus:outline-none transition-[border-color] duration-300";
+    "w-full border-0 border-b border-grand-gray/30 bg-transparent px-0 py-3.5 text-base text-grand-gray-dark placeholder:text-grand-gray/45 focus:border-grand-orange focus:outline-none transition-[border-color] duration-300";
 
   const labelClass =
-    "mb-2 block text-[10px] font-medium uppercase tracking-[0.25em] text-grand-gray transition-colors duration-300 group-focus-within:text-grand-orange";
+    "mb-2.5 block text-[10px] font-medium uppercase tracking-[0.25em] text-grand-gray transition-colors duration-300 group-focus-within:text-grand-orange";
 
   if (status === "success") {
     return (
-      <div role="status" className="border-l border-grand-orange py-2 pl-6">
+      <div role="status" className="border-l-2 border-grand-orange py-3 pl-6">
         <p className="text-base leading-loose text-grand-gray-dark">
           Vaša správa bola odoslaná. Ozveme sa vám čo najskôr.
         </p>
@@ -57,7 +57,7 @@ export function ContactForm() {
       onSubmit={handleSubmit}
       action={endpoint}
       method="POST"
-      className="space-y-8"
+      className="space-y-9"
       noValidate
     >
       <input type="hidden" name="access_key" value={accessKey} />
@@ -99,7 +99,7 @@ export function ContactForm() {
           id="message"
           name="message"
           required
-          rows={4}
+          rows={5}
           className={cn(inputClass, "resize-none")}
         />
       </div>
@@ -107,7 +107,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="mt-6 border border-grand-gray-dark px-10 py-3.5 text-[10px] font-medium uppercase tracking-[0.3em] text-grand-gray-dark transition-all duration-300 hover:border-grand-orange hover:bg-grand-orange hover:text-white disabled:opacity-50"
+        className="mt-4 border border-grand-gray-dark px-12 py-4 text-[11px] font-medium uppercase tracking-[0.28em] text-grand-gray-dark transition-all duration-300 hover:border-grand-orange hover:bg-grand-orange hover:text-white disabled:opacity-50"
       >
         {status === "submitting" ? "Odosielam…" : "Odoslať"}
       </button>
