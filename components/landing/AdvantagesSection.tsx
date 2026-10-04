@@ -55,10 +55,12 @@ export function AdvantagesSection() {
 
             <h2
               id="vyhody-heading"
-              className="mb-8 max-w-[10ch] text-[clamp(1.9rem,4.2vw,3rem)] font-light uppercase leading-[1.05] tracking-[0.1em] md:mb-10"
+              className="mb-8 text-[clamp(1.9rem,4.2vw,3rem)] font-light uppercase leading-[1.08] tracking-[0.1em] md:mb-10"
             >
-              <span className="block text-[#f9f9f6]">V čom sme</span>
-              <span className="mt-5 block text-grand-orange md:mt-7">
+              <span className="block text-[#f9f9f6] sm:whitespace-nowrap">
+                V čom sme
+              </span>
+              <span className="mt-3 block text-[1.12em] tracking-[0.12em] text-grand-orange md:mt-4">
                 Lepší
               </span>
             </h2>

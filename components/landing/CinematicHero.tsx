@@ -21,25 +21,25 @@ export function CinematicHero() {
         />
       </div>
 
-      {/* Soft top fade — header readability only */}
+      {/* Soft top fade — navigation readability */}
       <div
-        className="absolute inset-x-0 top-0 z-[1] h-32 bg-gradient-to-b from-black/32 via-black/[0.08] to-transparent md:h-40"
+        className="absolute inset-x-0 top-0 z-[1] h-36 bg-gradient-to-b from-black/36 via-black/[0.1] to-transparent md:h-44"
         aria-hidden
       />
 
-      {/* Localized central veil — only behind text, photo stays bright */}
+      {/* Soft elliptical veil behind headline — no hard box */}
       <div
         className="pointer-events-none absolute inset-0 z-[1]"
         style={{
           background:
-            "radial-gradient(ellipse 48% 34% at 50% 45%, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.16) 42%, transparent 72%)",
+            "radial-gradient(ellipse 52% 36% at 50% 44%, rgba(0,0,0,0.34) 0%, rgba(0,0,0,0.14) 46%, transparent 74%)",
         }}
         aria-hidden
       />
 
       {/* Soft bottom edge */}
       <div
-        className="absolute inset-x-0 bottom-0 z-[1] h-24 bg-gradient-to-t from-black/18 to-transparent"
+        className="absolute inset-x-0 bottom-0 z-[1] h-24 bg-gradient-to-t from-black/16 to-transparent"
         aria-hidden
       />
 
@@ -50,15 +50,15 @@ export function CinematicHero() {
             aria-hidden
             className="hero-enter mb-5 block h-px w-10 bg-grand-orange lg:mb-6 lg:w-12"
           />
-          <h1 className="hero-enter text-shadow-hero w-full max-w-[860px] uppercase text-white">
-            <span className="block text-[clamp(1.45rem,5.2vw,2.15rem)] font-light leading-[1.0] tracking-[0.04em] text-white/90 lg:text-[clamp(2.65rem,3.9vw,4.35rem)] lg:tracking-[0.035em]">
+          <h1 className="hero-enter text-shadow-hero w-full max-w-[860px] font-normal uppercase text-white">
+            <span className="block text-[clamp(1.45rem,5.2vw,2.15rem)] font-normal leading-[1.0] tracking-[0.04em] text-white lg:text-[clamp(2.65rem,3.9vw,4.35rem)] lg:tracking-[0.035em]">
               {line1}
             </span>
-            <span className="mt-1 block text-[clamp(1.7rem,5.8vw,2.5rem)] font-normal leading-[0.98] tracking-[0.03em] lg:mt-1.5 lg:text-[clamp(3rem,4.4vw,5rem)] lg:font-light lg:tracking-[0.028em]">
+            <span className="mt-1 block text-[clamp(1.7rem,5.8vw,2.5rem)] font-normal leading-[0.98] tracking-[0.03em] text-white lg:mt-1.5 lg:text-[clamp(3rem,4.4vw,5rem)] lg:tracking-[0.028em]">
               {line2}
             </span>
           </h1>
-          <p className="hero-enter-sub text-shadow-subtle mt-3.5 max-w-[18rem] text-[0.78rem] font-light leading-relaxed tracking-[0.01em] text-white/[0.82] sm:mt-4 sm:max-w-[22rem] sm:text-[0.875rem] lg:mt-5 lg:max-w-[520px] lg:text-[0.95rem]">
+          <p className="hero-enter-sub text-shadow-subtle mt-3.5 max-w-[18rem] text-[0.78rem] font-normal leading-relaxed tracking-[0.01em] text-white/[0.92] sm:mt-4 sm:max-w-[22rem] sm:text-[0.875rem] lg:mt-5 lg:max-w-[520px] lg:text-[0.95rem]">
             {heroContent.subtitle}
           </p>
         </div>

@@ -6,41 +6,33 @@ export function ValuesGrid() {
   return (
     <section
       aria-label="Naše hodnoty"
-      className="bg-grand-cream py-24 md:py-32 lg:py-36"
+      className="bg-white py-28 md:py-36 lg:py-40"
     >
       <div className="mx-auto max-w-6xl px-6">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-0">
+        <div className="grid grid-cols-1 gap-0 md:grid-cols-3">
           {valuesCards.map((text, index) => {
             const [lead, rest] = splitValueText(text);
-            const emphasized = index === 1;
 
             return (
-              <Reveal key={text} delayMs={index * 110} y={22}>
+              <Reveal key={text} delayMs={index * 100} y={18}>
                 <article
                   className={cn(
-                    "group relative overflow-hidden px-0 py-2 transition-transform duration-300 ease-out md:px-8 md:py-4",
-                    "md:hover:translate-y-[-3px]",
-                    index > 0 && "border-t border-grand-gray/15 pt-10 md:border-l md:border-t-0 md:pt-4",
-                    emphasized && "md:bg-grand-sand/35"
+                    "group relative overflow-hidden px-0 py-12 transition-transform duration-300 ease-out md:px-10 md:py-8",
+                    "md:hover:translate-y-[-2px]",
+                    index > 0 &&
+                      "border-t border-grand-gray/12 md:border-l md:border-t-0 md:border-grand-gray/12"
                   )}
                 >
-                  {/* Oversized editorial number */}
                   <span
                     aria-hidden
-                    className="pointer-events-none absolute -left-1 top-0 z-0 select-none font-light tabular-nums leading-none text-grand-orange/[0.12] transition-colors duration-300 group-hover:text-grand-orange/[0.2] md:-left-2 md:top-1"
-                    style={{ fontSize: "clamp(4.75rem, 11vw, 7.75rem)" }}
+                    className="pointer-events-none absolute -left-0.5 -top-1 z-0 select-none font-light tabular-nums leading-none text-grand-orange/25 transition-colors duration-300 group-hover:text-grand-orange/35 md:-left-1 md:top-0"
+                    style={{ fontSize: "clamp(5.25rem, 12vw, 8.25rem)" }}
                   >
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  {/* Content with left orange rule — no full card box */}
-                  <div
-                    className={cn(
-                      "relative z-10 mt-16 border-l border-grand-orange pl-5 transition-[border-color,padding] duration-300 group-hover:border-grand-orange md:mt-[4.75rem] md:pl-6",
-                      emphasized && "border-l-2 pl-6 md:pl-7"
-                    )}
-                  >
-                    <p className="text-[1.0625rem] leading-[1.65] text-grand-gray-dark md:text-[1.125rem] md:leading-[1.7]">
+                  <div className="relative z-10 mt-[4.5rem] border-l border-grand-orange pl-5 md:mt-20 md:pl-6">
+                    <p className="text-[1.0625rem] leading-[1.7] text-grand-gray-dark md:text-[1.125rem] md:leading-[1.75]">
                       <span className="font-medium text-grand-charcoal">
                         {lead}
                       </span>

@@ -18,7 +18,7 @@ export function ArchitecturalBreak() {
 
       {/* Soft edge from sand About above */}
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 z-[2] h-14 bg-gradient-to-b from-grand-sand/35 to-transparent md:h-16"
+        className="pointer-events-none absolute inset-x-0 top-0 z-[2] h-14 bg-gradient-to-b from-[#F7F3EE]/40 to-transparent md:h-16"
         aria-hidden
       />
 
