@@ -27,13 +27,18 @@ export function CinematicHero() {
         aria-hidden
       />
 
-      {/* Tight localized veil behind headline — preserves bright photo edges */}
+      {/* Left-side readability veil — keeps photo bright on the right */}
       <div
         className="pointer-events-none absolute inset-0 z-[1]"
         style={{
           background:
-            "radial-gradient(ellipse 42% 28% at 50% 40%, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.18) 45%, transparent 72%)",
+            "linear-gradient(90deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.22) 28%, rgba(0,0,0,0.06) 52%, transparent 72%)",
         }}
+        aria-hidden
+      />
+      {/* Soft mobile-centered veil when text is centered */}
+      <div
+        className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_55%_35%_at_50%_48%,rgba(0,0,0,0.32)_0%,transparent_70%)] lg:hidden"
         aria-hidden
       />
 
@@ -43,15 +48,21 @@ export function CinematicHero() {
         aria-hidden
       />
 
-      {/* Text — higher, narrower, calmer */}
-      <div className="relative z-10 mx-auto flex w-full max-w-[32rem] flex-col items-center px-6 pt-[22vh] text-center sm:max-w-[36rem] sm:pt-[23vh] md:max-w-[38rem] md:pt-[24vh]">
-        <h1 className="hero-enter text-shadow-hero text-[clamp(1.55rem,5vw,2.4rem)] font-light uppercase leading-[1.05] tracking-[0.04em] text-white sm:text-[clamp(2.35rem,3.8vw,3.85rem)] sm:tracking-[0.055em] md:leading-[1.04] md:tracking-[0.05em]">
-          <span className="block whitespace-nowrap">{line1}</span>
-          <span className="block whitespace-nowrap">{line2}</span>
-        </h1>
-        <p className="hero-enter-sub text-shadow-subtle mx-auto mt-3 max-w-[20rem] text-[0.78rem] font-light leading-relaxed tracking-[0.015em] text-white/[0.87] sm:mt-3.5 sm:max-w-sm sm:text-[0.875rem] md:text-[0.9375rem]">
-          {heroContent.subtitle}
-        </p>
+      {/* Editorial text — centered on mobile, left-aligned on desktop */}
+      <div className="relative z-10 flex w-full flex-1 items-center justify-center px-6 pb-28 pt-36 text-center lg:block lg:px-0 lg:pb-0 lg:pt-0 lg:text-left">
+        <div className="flex w-full max-w-[22rem] flex-col items-center sm:max-w-[26rem] lg:absolute lg:left-[13vw] lg:top-[57%] lg:max-w-[720px] lg:-translate-y-1/2 lg:items-start">
+          <span
+            aria-hidden
+            className="hero-enter mb-5 block h-px w-10 bg-grand-orange lg:mb-6 lg:w-12"
+          />
+          <h1 className="hero-enter text-shadow-hero text-[clamp(1.65rem,6vw,2.35rem)] font-normal uppercase leading-[1.02] tracking-[0.035em] text-white sm:tracking-[0.04em] lg:text-[clamp(3rem,4.5vw,5.2rem)] lg:font-light lg:leading-[1.0] lg:tracking-[0.045em]">
+            <span className="block whitespace-nowrap">{line1}</span>
+            <span className="block whitespace-nowrap">{line2}</span>
+          </h1>
+          <p className="hero-enter-sub text-shadow-subtle mt-4 max-w-[18rem] text-[0.8125rem] font-light leading-relaxed tracking-[0.01em] text-white/[0.86] sm:mt-5 sm:max-w-[22rem] sm:text-sm lg:mt-6 lg:max-w-[500px] lg:text-base lg:leading-relaxed">
+            {heroContent.subtitle}
+          </p>
+        </div>
       </div>
 
       <a
