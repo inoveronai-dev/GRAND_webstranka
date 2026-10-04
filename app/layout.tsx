@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { HeroNav } from "@/components/layout/HeroNav";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { BrandSplash } from "@/components/layout/BrandSplash";
 import "./globals.css";
 
 const inter = Inter({
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="sk" className={`${inter.variable} scroll-smooth`}>
       <body className="flex min-h-screen flex-col bg-grand-cream font-sans">
+        <BrandSplash />
         <HeroNav />
         <main className="flex-1">{children}</main>
         <SiteFooter />

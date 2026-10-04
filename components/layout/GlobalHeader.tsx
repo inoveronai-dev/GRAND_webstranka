@@ -59,8 +59,8 @@ export function GlobalHeader({ overHero = false }: GlobalHeaderProps) {
       "text-xs font-medium uppercase tracking-[0.12em] transition-colors duration-300",
       overHero
         ? active
-          ? "text-shadow-nav text-grand-orange"
-          : "text-shadow-nav text-white/90 hover:text-white"
+          ? "text-shadow-nav text-white"
+          : "text-shadow-nav text-white/85 hover:text-white"
         : active
           ? "text-grand-orange"
           : "text-grand-gray-dark hover:text-grand-orange"
@@ -156,7 +156,9 @@ export function GlobalHeader({ overHero = false }: GlobalHeaderProps) {
                   className={cn(
                     "block px-2 py-3 text-sm font-medium uppercase tracking-widest",
                     activeSection === href.replace("#", "")
-                      ? "text-grand-orange"
+                      ? overHero
+                        ? "text-white"
+                        : "text-grand-orange"
                       : overHero
                         ? "text-white/80 hover:text-white"
                         : "text-grand-gray-dark hover:text-grand-orange"

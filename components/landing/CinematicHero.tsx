@@ -58,9 +58,6 @@ export function CinematicHero() {
               {line2}
             </span>
           </h1>
-          <p className="hero-enter-sub text-shadow-subtle mt-3.5 max-w-[18rem] text-[0.78rem] font-normal leading-relaxed tracking-[0.01em] text-white/[0.92] sm:mt-4 sm:max-w-[22rem] sm:text-[0.875rem] lg:mt-5 lg:max-w-[520px] lg:text-[0.95rem]">
-            {heroContent.subtitle}
-          </p>
         </div>
       </div>
 
